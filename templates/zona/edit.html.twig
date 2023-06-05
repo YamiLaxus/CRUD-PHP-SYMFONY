@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Eitar Zona{% endblock %}
+
+{% block body %}
+<div id="header_container"><h1 class="title">Editar Zonas</h1></div>  
+
+    {{ include('zona/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_zona_index') }}" class="btn-nuevo">Volver</a>
+
+    {{ include('zona/_delete_form.html.twig') }}
+{% endblock %}

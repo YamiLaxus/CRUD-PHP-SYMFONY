@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Proveedor{% endblock %}
+
+{% block body %}
+<div id="header_container"><h1 class="title">Proveedores</h1></div>    
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>ID</th>
+                <td>{{ proveedor.idProveedor }}</td>
+            </tr>
+            <tr>
+                <th>Descripcion</th>
+                <td>{{ proveedor.descripcion }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_proveedor_index') }}" class="btn-nuevo">Volver</a>
+
+    <a href="{{ path('app_proveedor_edit', {'idProveedor': proveedor.idProveedor}) }}" class="btn-nuevo">Editar</a>
+
+    {{ include('proveedor/_delete_form.html.twig') }}
+{% endblock %}

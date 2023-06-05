@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Productos{% endblock %}
+
+{% block body %}
+<div id="header_container"><h1 class="title">Productos</h1></div>  
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Codigo</th>
+                <th>DescripcionProducto</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Iva</th>
+                <th>Peso</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for producto in productos %}
+            <tr>
+                <td>{{ producto.idProducto }}</td>
+                <td>{{ producto.codigo }}</td>
+                <td>{{ producto.descripcionProducto }}</td>
+                <td>{{ producto.precio }}</td>
+                <td>{{ producto.stock }}</td>
+                <td>{{ producto.iva }}</td>
+                <td>{{ producto.peso }}</td>
+                <td>
+                    <a href="{{ path('app_producto_show', {'idProducto': producto.idProducto}) }}" class="btn-neon">Mostrar</a>
+                    <a href="{{ path('app_producto_edit', {'idProducto': producto.idProducto}) }}" class="btn-neon">Editar</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">No se encontraron resultados</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_producto_new') }}" class="btn-nuevo">Crear nuevo producto</a>
+    <a href="{{ path('app_inicio') }}" class="btn-nuevo">Volver</a>
+{% endblock %}

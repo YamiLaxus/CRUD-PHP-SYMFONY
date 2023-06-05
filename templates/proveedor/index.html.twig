@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Proveedores{% endblock %}
+
+{% block body %}
+<div id="header_container"><h1 class="title">Proveedores</h1></div>    
+
+    <div id="table_container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Descripcion</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for proveedor in proveedors %}
+                <tr>
+                    <td>{{ proveedor.idProveedor }}</td>
+                    <td>{{ proveedor.descripcion }}</td>
+                    <td>
+                        <a href="{{ path('app_proveedor_show', {'idProveedor': proveedor.idProveedor}) }}" class="btn-neon">Mostrar</a>
+                        <a href="{{ path('app_proveedor_edit', {'idProveedor': proveedor.idProveedor}) }}" class="btn-neon">Editar</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="3">No hay proveedores registrados.</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+    
+
+    <a href="{{ path('app_proveedor_new') }}" class="btn-nuevo">Crear nuevo proveedor</a>
+    <a href="{{ path('app_inicio') }}" class="btn-nuevo">Volver</a>
+{% endblock %}

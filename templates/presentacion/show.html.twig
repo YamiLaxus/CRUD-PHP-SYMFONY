@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Presentacion{% endblock %}
+
+{% block body %}
+<div id="header_container"><h1 class="title">Precentacion</h1></div>    
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>ID</th>
+                <td>{{ presentacion.idPresentacion }}</td>
+            </tr>
+            <tr>
+                <th>Descripcion</th>
+                <td>{{ presentacion.descripcion }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_presentacion_index') }}" class="btn-nuevo">Volver</a>
+
+    <a href="{{ path('app_presentacion_edit', {'idPresentacion': presentacion.idPresentacion}) }}" class="btn-nuevo">Editar</a>
+
+    {{ include('presentacion/_delete_form.html.twig') }}
+{% endblock %}

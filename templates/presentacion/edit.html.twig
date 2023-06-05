@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editar Presentacion{% endblock %}
+
+{% block body %}
+<div id="header_container"><h1 class="title">Editar Presentacion</h1></div>   
+
+    {{ include('presentacion/_form.html.twig', {'button_label': 'Actializar'}) }}
+
+    <a href="{{ path('app_presentacion_index') }}" class="btn-nuevo">Volver</a>
+
+    {{ include('presentacion/_delete_form.html.twig') }}
+{% endblock %}

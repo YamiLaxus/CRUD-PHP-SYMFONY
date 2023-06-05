@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello InicioController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <div class="containerInicio">    
+            <div id="header_container"><h1 class="title">Inicio</h1></div>         
+        <div class="options">
+            <a href="{{ path('app_producto_index') }}" class="btn-nuevo">Producto</a>
+            <a href="{{ path('app_proveedor_index') }}" class="btn-nuevo">Proveedor</a>
+            <a href="{{ path('app_marca_index') }}" class="btn-nuevo">Marcas</a>
+            <a href="{{ path('app_presentacion_index') }}" class="btn-nuevo">Presentacion</a>            
+            <a href="{{ path('app_zona_index') }}" class="btn-nuevo">Zonas</a>
+            <a href="{{ path('app_usuarios_index') }}" class="btn-nuevo">Usuarios</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

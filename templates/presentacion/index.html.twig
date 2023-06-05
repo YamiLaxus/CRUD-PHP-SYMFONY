@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Presentaciones{% endblock %}
+
+{% block body %}
+<div id="header_container"><h1 class="title">Precentaciones</h1></div> 
+
+
+<div id="table_container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Descripcion</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for presentacion in presentacions %}
+            <tr>
+                <td>{{ presentacion.idPresentacion }}</td>
+                <td>{{ presentacion.descripcion }}</td>
+                <td>
+                    <a href="{{ path('app_presentacion_show', {'idPresentacion': presentacion.idPresentacion}) }}" class="btn-neon">Mostrar</a>
+                    <a href="{{ path('app_presentacion_edit', {'idPresentacion': presentacion.idPresentacion}) }}" class="btn-neon">Editar</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">No se encontraron resultados</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+    
+    <a href="{{ path('app_presentacion_new') }}" class="btn-nuevo">Crear nueva precentacion</a>
+    <a href="{{ path('app_inicio') }}" class="btn-nuevo">Volver</a>
+{% endblock %}

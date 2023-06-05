@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nueva Marca{% endblock %}
+
+{% block body %}
+<div id="header_container"><h1 class="title">Nueva Marca</h1></div>    
+
+    {{ include('marca/_form.html.twig') }}
+
+    <a href="{{ path('app_marca_index') }}" class="btn-nuevo">Volver</a>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Usuarios index{% endblock %}
+
+{% block body %}
+<div id="header_container"><h1 class="title">Usuarios Registrados</h1></div>    
+    <div id="table_container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Usuario</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for usuario in usuarios %}
+                <tr>
+                    <td>{{ usuario.idUsuario }}</td>
+                    <td>{{ usuario.nombre }}</td>
+                    <td>{{ usuario.usuario }}</td>
+                    <td>
+                        <a href="{{ path('app_usuarios_show', {'idUsuario': usuario.idUsuario}) }}" class="btn-neon">
+                            <span id="span1"></span>
+                            <span id="span2"></span>
+                            <span id="span3"></span>
+                            <span id="span4"></span>    
+                            Mostrar
+                        </a>
+                        <a href="{{ path('app_usuarios_edit', {'idUsuario': usuario.idUsuario}) }}" class="btn-neon">
+                            <span id="span1"></span>
+                            <span id="span2"></span>
+                            <span id="span3"></span>
+                            <span id="span4"></span>
+                            Editar
+                        </a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+    <a href="{{ path('app_usuarios_new') }}" class="btn-neon">Registrar nuevo usuario</a>
+    <a href="{{ path('app_inicio') }}" class="btn-nuevo">Volver</a>
+{% endblock %}

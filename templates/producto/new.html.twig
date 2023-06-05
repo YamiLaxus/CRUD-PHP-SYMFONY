@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nuevo Producto{% endblock %}
+
+{% block body %}
+<div id="header_container"><h1 class="title">Nuevo producto</h1></div>  
+
+    {{ include('producto/_form.html.twig') }}
+
+    <a href="{{ path('app_producto_index') }}" class="btn-nuevo">Vovler</a>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Zona index{% endblock %}
+
+{% block body %}
+<div id="header_container"><h1 class="title">Zonas</h1></div>  
+
+<div id="table_container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Descripcion</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for zona in zonas %}
+            <tr>
+                <td>{{ zona.idZona }}</td>
+                <td>{{ zona.descripcion }}</td>
+                <td>
+                    <a href="{{ path('app_zona_show', {'idZona': zona.idZona}) }}" class="btn-neon">Mostrar</a>
+                    <a href="{{ path('app_zona_edit', {'idZona': zona.idZona}) }}" class="btn-neon">Editar</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">No se encontraron resultados</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+    
+
+    <a href="{{ path('app_zona_new') }}" class="btn-nuevo">Crear nueva zona</a>
+    <a href="{{ path('app_inicio') }}" class="btn-nuevo">Volver</a>
+{% endblock %}

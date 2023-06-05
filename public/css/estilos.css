@@ -1,0 +1,124 @@
+body{
+    background-color: #521b76;
+    font-family: Arial;
+}
+
+#header-container{
+    margin: 150px auto;
+    width: 600px;
+}
+
+.title{
+    color: white;
+    text-align: center;
+}
+
+#table_container{
+    margin: 150px auto;
+    width: 600px;
+}
+
+table{
+    background-color: white;
+    text-align: left;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, th{
+    padding: 20px;
+}
+
+thead{
+    background-color: #a945c7;
+    border-bottom: solid 5px #0F362D;
+    color: white;
+}
+
+tr:nth-child(even){
+    background-color: #ddd;
+}
+
+tr:hover td{
+    background-color: #27678e;
+    color: white;
+}
+
+.btn-neon{
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    color: #000000;
+    letter-spacing: 4px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+.btn-neon:hover{
+    background: #a945c7;
+}
+
+.btn-nuevo{
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    color: #fff;
+    letter-spacing: 4px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.2s;
+    text-align: center;
+}
+
+.btn-nuevo:hover{
+    background: #a945c7;
+}
+
+.btn-neon span{
+    position: absolute;
+    display: block;
+}
+
+
+form{
+    background-color: white;
+    border-radius: 3px;
+	color: #999;
+	font-size: 0.8em;
+	padding: 10px;
+	margin: 0 auto;
+	width: 300px;
+}
+
+input, textarea{
+    border: 1;
+    outline: none;;
+    width: 280px;
+}
+
+.field{
+    border: solid 1px #ccc;
+    padding: 10px;    
+}
+
+.field:focus{
+    border-color: #a945c7;
+}
+
+.btn{
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    color: #000000;
+    letter-spacing: 4px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.2s;
+    width: 280px;
+}
+
+.center-content{
+    text-align: center;
+}
+
